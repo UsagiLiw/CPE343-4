@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.util.ArrayList;
 
 /**
  * Simple class representing a square figure. Designed 
@@ -11,7 +10,7 @@ import java.util.ArrayList;
  *   Modified 24 August 2017 for Exercise 3, to make into a subclass
  *   of AbstractShape
  *
- *      Nonthakorn Sukprom 60070503435,
+ *     Edited : Nonthakorn Sukprom 60070503435,
  *      6 February 2020.
  *
  */
@@ -64,5 +63,15 @@ public class Square extends AbstractShape
         return (double) oneside * oneside;
     }
 
-	
+    /**
+     * Override method toString to make it
+     * return more useful information about the shape
+     * @return      a string information of the object.
+     */
+    @Override
+    public String toString()
+    {
+        String information = "x = " + this.anchor.x + " y = " + this.anchor.y + " with sides " + this.oneside;
+        return information;
+    }
 }

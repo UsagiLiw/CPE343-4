@@ -4,14 +4,15 @@
  * 
  *   Created by Sally Goldin, 21 March 2012
  */
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * This class encapsulates the weird Java file IO to give students
  * a way to read text files line by line that looks more like C
- *
- * 	Nonthakorn Sukprom 60070503435,
- *  6 February 2020.
  */
 public class TextFileReader
 {

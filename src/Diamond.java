@@ -1,12 +1,11 @@
 import java.awt.*;
-import java.util.ArrayList;
 
 /**
  * Simple class representing a diamond object. 
  *
  *   Created 24 August 2017 for Exercise 3
  *
- *      Nonthakorn Sukprom 60070503435,
+ *      Edited : Nonthakorn Sukprom 60070503435,
  *     6 February 2020.
  */
 public class Diamond extends AbstractShape
@@ -72,6 +71,19 @@ public class Diamond extends AbstractShape
         return (double) (horizontalAxis * verticalAxis) / 2;
     }
 
+    /**
+     * Override method toString to make it
+     * return more useful information about the shape
+     * @return      a string information of the object.
+     */
+    @Override
+    public String toString()
+    {
+        String information = "x = " + this.anchor.x + " y = " + this.anchor.y + "\n\t\t\t"
+                                + " with vertical axis " + this.verticalAxis
+                                + " and horizontal axis " + this.horizontalAxis;
+        return information;
+    }
 
 
 }

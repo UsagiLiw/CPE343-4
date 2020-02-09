@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.util.ArrayList;
 
 /**
  * Simple class representing a triangle object. Designed 
@@ -12,7 +11,7 @@ import java.util.ArrayList;
  *   Modified 24 August 2017 for Exercise 3, to make into a subclass
  *   of AbstractShape
  *
- *   Nonthakorn Sukprom 60070503435,
+ *   Edited : Nonthakorn Sukprom 60070503435,
  *   6 February 2020.
  *
  */
@@ -111,4 +110,17 @@ public class Triangle extends AbstractShape
 	return len;
     }
 
+    /**
+     * Override method toString to make it
+     * return more useful information about the shape
+     * @return      a string information of the object.
+     */
+    @Override
+    public String toString()
+    {
+        String information = "x1 = " + this.vertices.get(0).x + " y1 = " + this.vertices.get(0).y + "\n\t\t\t"
+                                + "x2 = " + this.vertices.get(1).x + " y2 = " +this.vertices.get(1).y + "\n\t\t\t"
+                                + "x3 = " + this.vertices.get(2).x + " y3 = " +this.vertices.get(2).y;
+        return information;
+    }
 }

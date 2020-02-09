@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.util.ArrayList;
 
 /**
  * Simple class representing a circle object. 
@@ -7,7 +6,7 @@ import java.util.ArrayList;
  *   Created 26 Aug 2017 for Lecture 4
  *   Modified 9 Sept 2017 to fix draw method (wrong args)
  *
- *   Nonthakorn Sukprom 60070503435,
+ *   Edited : Nonthakorn Sukprom 60070503435,
  *   6 February 2020.
  */
 public class Circle extends AbstractShape
@@ -71,4 +70,17 @@ public class Circle extends AbstractShape
        int labely = anchor.y - 5;
        graphics.drawString(new String(" " + shapeId),labelx,labely);
     }
+
+    /**
+     * Override method toString to make it
+     * return more useful information about the shape
+     * @return      a string information of the object.
+     */
+    @Override
+    public String toString()
+    {
+        String information = "x = " + this.anchor.x + " y = " + this.anchor.y + " with radius " + this.radius;
+        return information;
+    }
+
 }

@@ -1,13 +1,11 @@
-import java.util.ArrayList;
 import java.awt.*;
+import java.util.ArrayList;
 /**
 S *  AbstractShape class. Intended to serve as a superclass (generalization) for
  *  individual shapes like Triangle, Square, etc.
  *
  *  V2 - Created by Sally Goldin, 21 August 2017
  *
- *  	Nonthakorn Sukprom 60070503435,
- *      6 February 2020.
  */
 public abstract class AbstractShape
 {
@@ -46,10 +44,10 @@ public abstract class AbstractShape
      */
     public AbstractShape()
     {
-	counter++;
-	shapeId = counter;
-	drawColor = colors[counter % 5];
-	allFigures.add(this);
+		counter++;
+		shapeId = counter;
+		drawColor = colors[counter % 5];
+		allFigures.add(this);
     }
 
     /**
@@ -63,19 +61,19 @@ public abstract class AbstractShape
      */
     public void move(int x, int y)
     {
-	Point newAnchor = new Point(x,y);
-	int deltaX = newAnchor.x - anchor.x; /* difference between old & new posn */
-	int deltaY = newAnchor.y - anchor.y;
-        anchor = newAnchor;
-	int points = vertices.size();
-	for (int i = 0; i < points; i++)
-	{
-	    Point p = vertices.get(i);
-	    p.x += deltaX;
-	    p.y += deltaY;
-	    /* we don't need to put it back in the arraylist */
-	    /* since it is still there. */
-	}
+		Point newAnchor = new Point(x,y);
+		int deltaX = newAnchor.x - anchor.x; /* difference between old & new posn */
+		int deltaY = newAnchor.y - anchor.y;
+			anchor = newAnchor;
+		int points = vertices.size();
+		for (int i = 0; i < points; i++)
+		{
+			Point p = vertices.get(i);
+			p.x += deltaX;
+			p.y += deltaY;
+			/* we don't need to put it back in the arraylist */
+			/* since it is still there. */
+		}
     } 
 
     /**
@@ -86,18 +84,18 @@ public abstract class AbstractShape
      */
     public void draw(Graphics2D graphics)
     {
-	graphics.setPaint(drawColor);
-	int points = vertices.size();
-	for (int i = 0; i < points; i++)
-	{
-	    Point p1 = vertices.get(i);
-	    Point p2 = vertices.get((i+1)%points);
-	    graphics.drawLine(p1.x,p1.y,p2.x,p2.y);
-	}
-	/* label it near the anchor point */
-	int labelx = anchor.x + 5;
-	int labely = anchor.y - 5;
-	graphics.drawString(new String(" " + shapeId),labelx,labely);
+		graphics.setPaint(drawColor);
+		int points = vertices.size();
+		for (int i = 0; i < points; i++)
+		{
+			Point p1 = vertices.get(i);
+			Point p2 = vertices.get((i+1)%points);
+			graphics.drawLine(p1.x,p1.y,p2.x,p2.y);
+		}
+		/* label it near the anchor point */
+		int labelx = anchor.x + 5;
+		int labely = anchor.y - 5;
+		graphics.drawString(new String(" " + shapeId),labelx,labely);
     }
 
     /**
@@ -109,18 +107,18 @@ public abstract class AbstractShape
      */
     public void draw(Graphics2D graphics,Color fillColor)
     {
-	draw(graphics);  /* draw the outline */
-	int size = vertices.size();
-	int x[] = new int[size];
-	int y[] = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-	    Point p = vertices.get(i);
-	    x[i] = p.x;
-	    y[i] = p.y;
-	}
-	graphics.setPaint(fillColor);
-	graphics.fillPolygon(x,y,size);
+		draw(graphics);  /* draw the outline */
+		int size = vertices.size();
+		int x[] = new int[size];
+		int y[] = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			Point p = vertices.get(i);
+			x[i] = p.x;
+			y[i] = p.y;
+		}
+		graphics.setPaint(fillColor);
+		graphics.fillPolygon(x,y,size);
     }
 
     /**
@@ -142,12 +140,10 @@ public abstract class AbstractShape
      */
     public static void drawAll(Graphics2D graphics)
     {
-	for (int i=0; i < allFigures.size(); i++)
-	{
-	    AbstractShape shape = allFigures.get(i);
-	    shape.draw(graphics);
-	}
+		for (int i=0; i < allFigures.size(); i++)
+		{
+			AbstractShape shape = allFigures.get(i);
+			shape.draw(graphics);
+		}
     }
-
-
 }
